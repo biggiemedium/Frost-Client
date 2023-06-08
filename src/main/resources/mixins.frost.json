@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "dev.px.frost.Client.Mixin",
+  "refmap": "mixins.frost.refmap.json",
+  "mixins": [
+    "Minecraft.MixinMinecraft"
+  ]
+}

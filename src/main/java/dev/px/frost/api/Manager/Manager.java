@@ -1,8 +1,6 @@
-package dev.px.frost.api.Manager;
+package dev.px.frost.API.Manager;
 
-import dev.px.frost.api.Listeners.IManager;
-
-import java.util.ArrayList;
+import dev.px.frost.API.Listeners.IManager;
 
 public class Manager implements IManager {
 

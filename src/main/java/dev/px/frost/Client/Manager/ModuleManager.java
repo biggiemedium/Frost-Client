@@ -1,33 +1,30 @@
 package dev.px.frost.Client.Manager;
 
-import com.google.common.reflect.ClassPath;
 import dev.px.frost.Client.Module.Module;
+import dev.px.frost.Client.Module.Modules.Client.ClickGUIModule;
+import dev.px.frost.Client.Module.Modules.Client.CustomFontModule;
+import dev.px.frost.Client.Module.Modules.Combat.CrystalAura;
+import dev.px.frost.Client.Module.Modules.Combat.SkidAura;
 import dev.px.frost.Client.Module.Modules.Misc.TestModule;
-import dev.px.frost.api.Manager.Manager;
-import dev.px.frost.api.Module.Type;
-import net.minecraft.launchwrapper.Launch;
+import dev.px.frost.API.Manager.Manager;
+import dev.px.frost.API.Module.Type;
 
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class ModuleManager extends Manager {
 
     private ArrayList<Module> modules = new ArrayList<>();
 
     public ModuleManager() {
-
-    }
-
-    @Override
-    public void load() {
         Add(new TestModule());
 
-        modules.sort(Comparator.comparing(Module::getName));
+        // Client
+        Add(new ClickGUIModule());
+        Add(new CustomFontModule());
+
+        // Combat
+        Add(new CrystalAura());
+        Add(new SkidAura());
     }
 
     private void Add(Module module) {

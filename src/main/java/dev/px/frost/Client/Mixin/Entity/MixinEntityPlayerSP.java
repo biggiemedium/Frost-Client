@@ -2,7 +2,7 @@ package dev.px.frost.Client.Mixin.Entity;
 
 import dev.px.frost.Client.Event.Entity.EventPlayerUpdate;
 import dev.px.frost.Client.Frost;
-import dev.px.frost.api.Manager.Manager;
+import dev.px.frost.API.Manager.Manager;
 import net.minecraft.client.entity.EntityPlayerSP;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,10 +1,9 @@
 package dev.px.frost.Client.Event;
 
 import dev.px.frost.Client.Frost;
-import dev.px.frost.api.Util;
+import dev.px.frost.API.Util.Util;
 import me.zero.alpine.fork.event.type.Cancellable;
 import me.zero.alpine.fork.listener.Listenable;
-import net.minecraft.client.Minecraft;
 
 public class Event extends Cancellable implements Listenable, Util {
 

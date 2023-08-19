@@ -2,8 +2,8 @@ package dev.px.frost.Client.Manager;
 
 import dev.px.frost.Client.Frost;
 import dev.px.frost.Client.Module.Module;
-import dev.px.frost.api.Manager.Manager;
-import dev.px.frost.api.Util;
+import dev.px.frost.API.Manager.Manager;
+import dev.px.frost.API.Util.Util;
 import me.zero.alpine.fork.listener.Listenable;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -11,8 +11,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.InputEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 import org.lwjgl.input.Keyboard;
-
-import java.util.Arrays;
 
 public class EventManager extends Manager implements Listenable, Util {
 
@@ -22,7 +20,6 @@ public class EventManager extends Manager implements Listenable, Util {
 
     @SubscribeEvent
     public void onKeyPress(InputEvent.KeyInputEvent event) {
-        
         if (Keyboard.getEventKeyState()) {
             for(Module m : Frost.getHandler().getModuleManager().getModules()) {
                 if(m.getKeyBind() == 0) return;

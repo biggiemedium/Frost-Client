@@ -1,4 +1,4 @@
-package dev.px.frost.api.Listeners;
+package dev.px.frost.API.Listeners;
 
 public interface IManager {
 

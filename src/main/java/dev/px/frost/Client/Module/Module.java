@@ -1,16 +1,22 @@
 package dev.px.frost.Client.Module;
 
 import dev.px.frost.Client.Frost;
-import dev.px.frost.api.Module.Type;
+import dev.px.frost.API.Module.Type;
+import dev.px.frost.API.Util.Util;
+import dev.px.frost.Client.Setting.Setting;
 import me.zero.alpine.fork.listener.Listenable;
 import net.minecraftforge.common.MinecraftForge;
 
+import java.awt.*;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 
-public class Module implements Listenable {
+public class Module implements Listenable, Util {
 
     private String name;
     private String description;
@@ -63,7 +69,6 @@ public class Module implements Listenable {
         Frost.EVENT_BUS.unsubscribe(this);
     }
 
-
     public String getName() {
         return name;
     }
@@ -90,6 +95,22 @@ public class Module implements Listenable {
 
     public void setType(Type type) {
         this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public boolean isDrawn() {
+        return drawn;
+    }
+
+    public void setDrawn(boolean drawn) {
+        this.drawn = drawn;
     }
 
     @Retention(RetentionPolicy.RUNTIME)

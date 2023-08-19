@@ -1,7 +1,7 @@
 package dev.px.frost.Client.Mixin.Minecraft;
 
 import dev.px.frost.Client.Frost;
-import dev.px.frost.api.Manager.Manager;
+import dev.px.frost.API.Manager.Manager;
 import net.minecraft.client.Minecraft;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,4 +1,4 @@
-package dev.px.frost.api;
+package dev.px.frost.API.Util;
 
 import net.minecraft.client.Minecraft;
 

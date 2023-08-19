@@ -1,39 +1,37 @@
 package dev.px.frost.Client.Manager;
 
+import dev.px.frost.API.Manager.Manager;
 import dev.px.frost.Client.Module.Module;
 import dev.px.frost.Client.Setting.Setting;
-import dev.px.frost.api.Manager.Manager;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.List;
 
 public class SettingManager extends Manager {
 
-    private ArrayList<Setting> settings = new ArrayList<>();
+    public ArrayList<Setting> values;
 
     public SettingManager() {
-
+        this.values = new ArrayList<>();
     }
 
-    public void addSetting(Setting setting) {
-        this.settings.add(setting);
+    public Setting Add(Setting value) {
+        this.values.add(value);
+        return value;
     }
 
-    public ArrayList<Setting> getSettingsByMod(Module mod) {
-        ArrayList<Setting> out = new ArrayList<>();
-        for (Setting s : getSettings()) {
-            if (s.getModule().equals(mod)) {
-                out.add(s);
+    public List<Setting> getValueForMod(Module module) {
+        List<Setting> valueList = new ArrayList<>();
+        for(Setting<?> v : values) {
+            if(v.getModule() == module) {
+                valueList.add(v);
             }
         }
-        return out.isEmpty() ? null : out;
+        return valueList;
     }
 
-    public Setting getSettingByMod(Module module, String name) {
-        return settings.stream().filter(m -> m.getModule() == module).filter(n -> n.getModule().getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+    public ArrayList<Setting> getValues() {
+        return this.values;
     }
 
-    public ArrayList<Setting> getSettings() {
-        return settings;
-    }
 }

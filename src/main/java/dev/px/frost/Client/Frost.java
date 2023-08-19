@@ -1,11 +1,13 @@
 package dev.px.frost.Client;
 
-import dev.px.frost.api.Manager.ManagerHandler;
+import dev.px.frost.API.Manager.ManagerHandler;
 import me.zero.alpine.fork.bus.EventBus;
 import me.zero.alpine.fork.bus.EventManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import org.lwjgl.opengl.Display;
 
 @Mod(modid = Frost.MODID, name = "Frost Client", version = Frost.VERSION)
 public class Frost {
@@ -29,6 +31,11 @@ public class Frost {
     public void init(FMLInitializationEvent event) {
         handler = new ManagerHandler();
         handler.load();
+    }
+
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        Display.setTitle(NAME + " | Version: " + VERSION);
     }
 
     public static ManagerHandler getHandler() {

@@ -1,7 +1,8 @@
-package dev.px.frost.api.Module;
+package dev.px.frost.API.Module;
 
 public enum Type {
 
+    CLIENT("Client"),
     COMBAT("Combat"),
     MISC("Miscellaneous"),
     PLAYER("Player"),
